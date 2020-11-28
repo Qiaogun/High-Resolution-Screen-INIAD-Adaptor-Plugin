@@ -1,0 +1,36 @@
+{
+    "name": "High-Resolution-Screen-INIAD-Adaptor-Plugin",
+    "description": "High-Resolution-Screen-INIAD-Adaptor-Plugin",
+    "version": "1.0",
+    "manifest_version": 2,
+    "browser_action": {
+        "default_popup": "hello.html",
+        "default_icon": "hello_extensions.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://moocs.iniad.org/*"
+            ],
+            "js": [
+                "script.js"
+            ],
+            "run_at": "document_end",
+            "all_frames": true
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "https://moocs.iniad.org/courses/*",
+        "activeTab"
+    ],
+    "commands": {
+        "_execute_browser_action": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+F",
+                "mac": "MacCtrl+Shift+F"
+            },
+            "description": "Opens hello.html"
+        }
+    }
+}
